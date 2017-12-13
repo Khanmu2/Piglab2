@@ -1,0 +1,46 @@
+public class PairOfDice {
+	Die d1; // fields for 2 dies 
+	Die d2;
+	
+	public PairOfDice() { // default 
+		d1 = new Die();
+		d2 = new Die();
+	}
+	
+	public void roll() { 
+		d1.roll();
+		d2.roll();
+	}
+	
+	public boolean hasTwoOnes() { // check if any of the dies rolled one 
+		if(d1.getValue() == 1 && d2.getValue() == 1) {
+			return true;
+		}
+		return false;
+	}
+	
+	public boolean hasOneOne() { //check if both of the dies rolled ones
+		if(d1.getValue() == 1 || d2.getValue() == 1) {
+			return true;
+		}
+		return false;
+	}
+	
+	public int totalValue() { // combnies the value of both dies to get the total value score
+		return (d1.getValue() + d2.getValue());
+	}
+	
+	public String toString() { //converts the both the dice rolls into string 
+		String d1string = d1.toString();
+		String d2string = d2.toString();
+		return d1string + "\n" + d2string;
+	}
+	
+	
+	public static void main(String[] args) { // creates roll
+		PairOfDice pod = new PairOfDice();
+		pod.roll();
+		System.out.println(pod);
+	}
+	
+}
