@@ -1,0 +1,31 @@
+
+import java.util.Scanner; //imports the scanner class
+
+public class HumanPlayer extends Player { // extends human player class to player class 
+
+	public HumanPlayer(String name, PairOfDice pod) {
+		super(name, pod); 
+	}
+	@Override
+	public boolean rollAgain() { // sets up system to allow player to roll ahain 
+		Scanner s = new Scanner(System.in);
+		System.out.println("Would you like to roll again [y/n]? "); // print to say ask if they want to roll again 
+		String response = s.nextLine();
+		while(!response.equals("y") && !response.equals("n")) {
+			System.out.println("Would you like to roll again [y/n]? ");
+			response = s.nextLine();			
+		}
+		if(response.equals("y")) { // if yes then they will roll again 
+			return true;
+		}
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+	public static void main(String[] args) { //bob? 
+		HumanPlayer hp = new HumanPlayer("Bob", new PairOfDice());
+		System.out.println(hp.rollAgain());
+	}
+	
+
+}
