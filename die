@@ -1,0 +1,35 @@
+import java.util.Random;
+
+public class Die {
+
+	private int value;
+	
+	public Die() {
+		value = 0; // automatically setting the dice value to 0 making it default 
+	}
+	
+	public void roll() {
+		Random r = new Random();
+		value = r.nextInt(6) + 1; // sets random bnumber to be choosen between 1 to 6 like a dice
+	}
+	
+	public int getValue() {
+		return value; // returns value of the dice role
+	}
+	
+	
+	public String toString() {
+		return ("Die Value: " + value); // adds the value returned and value rolled
+		
+	}
+	
+	
+	public static void main(String[] args) {
+		Die d = new Die(); //rolls the dice 
+		d.roll();
+		String thedie = d.toString();
+		System.out.println(thedie);
+	}
+	
+}
+
